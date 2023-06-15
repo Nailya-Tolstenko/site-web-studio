@@ -15,7 +15,7 @@
 
 					<div class="services__block">
 					<a href="#">
-						<img src="/public/uploads/services.ipg" alt="services" />
+						<img src="/uploads/services.jpg" alt="services" />
 					</a>
 						<div class="overlay"></div>
 						<p>Создание сайтов</p>
@@ -23,7 +23,7 @@
 
 					<div class="services__block">
 						<a href="#">
-							<img src="/public/uploads/services.ipg" alt="services" />
+							<img src="/uploads/services.jpg" alt="services" />
 						</a>
 						<div class="overlay"></div>
 						<p>продвижение сайтов</p>
@@ -31,7 +31,7 @@
 
 					<div class="services__block">
 						<a href="#">
-							<img src="/public/uploads/services.ipg" alt="services" />
+							<img src="/uploads/services.jpg" alt="services" />
 						</a>
 						<div class="overlay"></div>
 						<p>Реклама в интернете</p>

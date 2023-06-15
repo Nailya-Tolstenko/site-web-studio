@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -15,10 +15,7 @@
 }
 
 .header {
-    background-image: url("/public/uploads/sky.jpg");
     height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 a {
@@ -35,6 +32,8 @@ ul li {
 main {
     width: 1440px;
     margin: 0 auto;
+    background: url("/uploads/sky.jpg") no-repeat scroll 0 0 transparent;
+    background-size: cover;
 }
 
 .header-list {
@@ -101,7 +100,7 @@ main {
 
 .banner-section-container {
     display: flex;
-    background: url('/public/uploads/services1.jpg') no-repeat scroll right 0 transparent;
+    background: url('/uploads/services1.jpg') no-repeat scroll right 0 transparent;
     background-size: 26% 120% ;
     width: 100%;
 }

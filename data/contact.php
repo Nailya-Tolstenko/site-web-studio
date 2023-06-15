@@ -1,31 +1,29 @@
-<?php //require_once  '../connect.php';?>
-<?php
-error_reporting(E_ALL | E_STRICT);
-ini_set('display_startup_errors', 0);
-ini_set('display_errors', 'On');
-?>
+<?php 
 
-<?php
+require_once('./connect.php'); 
 
-/*$sql = $pdo->prepare("SELECT * FROM contact");
-$res=$sql->fetch(PDO::FETCH_ASSOC);*/
+$sql = $pdo->prepare("SELECT * FROM contact");
+$res = $sql->fetch(PDO::FETCH_ASSOC);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
+	<title>Тестовый сайт</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/style.css">
-	<title>Тестовый сайт</title>
     
 </head>
 
 <body>
+
 	<main>
+
 		<div class="header">
+
 			<nav class="header-nav">
 
 				<ul class="header-list">
@@ -54,4 +52,5 @@ $res=$sql->fetch(PDO::FETCH_ASSOC);*/
 					</li>
 
 				</ul>
+				
 			</nav>
