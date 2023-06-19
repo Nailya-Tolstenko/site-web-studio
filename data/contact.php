@@ -3,6 +3,7 @@
 require_once('./connect.php'); 
 
 $sql = $pdo->prepare("SELECT * FROM contact");
+$sql->execute();  // выполнение отправки запроса
 $res = $sql->fetch(PDO::FETCH_ASSOC);
 
 ?>
@@ -37,20 +38,22 @@ $res = $sql->fetch(PDO::FETCH_ASSOC);
 					</li>
 					<li class="header-list-link">
 						<a href="#">
-							Город
+							<span><?php echo $res["city"]?></span>
 						</a>
 					</li>
 					<li class="header-list-link">
 						<a href="#">
-							Телефон
+						<span><?php echo $res["phone"]?></span>
 						</a>
 					</li>
 					<li class="header-list-link">
 						<a href="#">
-							Эл. почта
+						<span><?php echo $res["email"]?></span>
 						</a>
 					</li>
 
 				</ul>
 				
 			</nav>
+
+		</div>

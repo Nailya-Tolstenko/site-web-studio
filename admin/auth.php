@@ -12,20 +12,20 @@ ini_set('display_errors', 'On');
 if (isset($_POST['login']) && isset($_POST['password'])) {
    // тогда идём дальше
 
-$login=$_POST["login"];
-$password=$_POST["password"];
+    $login=$_POST["login"];
+    $password=$_POST["password"];
 
-$sql = $pdo->prepare("SELECT id, login FROM user WHERE login=:login AND password=:password");
-$sql->execute(array('login' => $login, 'password' => $password));
-$array=$sql->fetch(PDO::FETCH_ASSOC);
-print_r($array);
-if($array["id"]>0) {
-    $_SESSION['login']=$array["login"];
-    header('Location: ../admin.php');
-}
-else{
-    header('Location: ../login.php');
-}
+    $sql = $pdo->prepare("SELECT id, login FROM user WHERE login=:login AND password=:password");
+    $sql->execute(array('login' => $login, 'password' => $password));
+    $array=$sql->fetch(PDO::FETCH_ASSOC);
+    print_r($array);
+    
+    if($array["id"]>0) {
+        $_SESSION['login']=$array["login"];
+        header('Location: ../admin.php');
+    } else{
+        header('Location: ../login.php');
+    }
 
 } else {
     die('Вы не передали POST данные!');

@@ -1,45 +1,66 @@
+<?php
 
-		<section>
-		
-			<div class="services-container">
+require_once('./connect.php'); 
 
-				<div class="services-headline">
+$sqlUslugui = $pdo->prepare("SELECT * FROM uslugi");
+// выполнение отправки запроса
+$sqlUslugui->execute();
+$uslugi = $sqlUslugui->fetchAll(PDO::FETCH_OBJ);
 
-					<div class="servis">
-						<h2>
-							Наши услуги
-						</h2>
-					</div>
+// print_r($uslugi);
+// die;
 
-					<div class="services-blocks">
+?>
+<section>
 
-					<div class="services__block">
-					<a href="#">
-						<img src="/uploads/services.jpg" alt="services" />
-					</a>
-						<div class="overlay"></div>
-						<p>Создание сайтов</p>
-					</div>
+	<div class="services-container">
 
-					<div class="services__block">
-						<a href="#">
-							<img src="/uploads/services.jpg" alt="services" />
-						</a>
-						<div class="overlay"></div>
-						<p>продвижение сайтов</p>
-					</div>
+		<div class="services-headline">
 
-					<div class="services__block">
-						<a href="#">
-							<img src="/uploads/services.jpg" alt="services" />
-						</a>
-						<div class="overlay"></div>
-						<p>Реклама в интернете</p>
-					</div>
-
-					</div> 
-
-				</div>
+			<div class="servis">
+				<h2>Наши услуги</h2>
 			</div>
 
-		</section>
+			<?php
+				$i = 0;
+				foreach($uslugi as $usluga):
+					
+				if ($i == 0) {
+					echo '<div class="services-blocks">';
+				}
+
+			?>
+
+				<div class="services__block">
+					<a href="#">
+						<img src="/uploads/<?=$usluga->filename;?>" alt="services" />
+					</a>
+					<div class="overlay"></div>
+					<p>
+						<?=$usluga->title;?>
+					</p>
+					<p>
+						<?=$usluga->price;?>
+					</p>
+				</div>
+
+			<?php
+
+				$i++;
+
+				if ($i==4) {
+					$i = 0;
+					echo '</div>';
+				}
+				endforeach;
+
+				if ($i != 0) {
+					echo '</div>';
+				}
+			
+			?>
+
+		</div>
+	</div>
+
+</section>

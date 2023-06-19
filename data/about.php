@@ -1,27 +1,34 @@
-<section>
+<?php
+require_once('./connect.php'); 
 
-		<section class="banner-section">
+$sqlAbout = $pdo->prepare("SELECT * FROM about");
+$sqlAbout->execute();  // исполняем запрос
+$about = $sqlAbout->fetch(PDO::FETCH_OBJ);
 
-			<div class="banner-section-container">
+?>
 
-				<div class="banner">
+<section class="banner-section">
 
-					<div class="banner-headline">
+	<div class="banner-section-container">
 
-						<div class="banner-headline-main">
-							<h2 class="banner-headline-main">  
-								О нас
-							</h2>                             
-						</div>
+		<div class="banner">
 
-						<div class="headline-text">
-								Outcome-centered products that reduce churn, optimize pricing, and grow your subscription. Outcome-centered products that reduce churn, optimize pricing, and grow your subscription.Outcome-centered products that reduce churn, optimize pricing, and grow your subscription.
-						</div>
-						
-					</div>
+			<div class="banner-headline">
 
+				<div class="banner-headline-main">
+					<h2 class="banner-headline-main">
+						<?php echo $about->title;?>
+					</h2>
 				</div>
 
+				<div class="headline-text">
+						<?php echo $about->description;?>
+				</div>
+				
 			</div>
 
-		</section>
+		</div>
+
+	</div>
+
+</section>
